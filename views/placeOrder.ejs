@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/orderAdmin.css" />
+    <title>Document</title>
+</head>
+<body>
+    <%- include('./parials/navigation.ejs') %>
+
+    <div class="order">
+        <div class="imBx">
+            <h1>House Special</h1>
+            <img src="https://cheeseburgerbobbys.com/wp-content/uploads/Third-Lb-Burger-748x506-1.png" alt="">
+        </div>
+
+        <div class="orderForm">
+            <div class="fil">
+            <form action="/placeOrder" method="post">
+                <h1>Place Your Order</h1>
+                <div class="student">
+                    <label for="trainee"> Trainee Name:  </label>
+                    <br>
+                    <select name="trainee_nm" id="">
+                        <option value="1">Cammeyon Gordon</option>
+                        <option value="2">Krisan Gordon</option>
+                        <option value="3">Shavvan Burrel</option>
+                        <option value="4">Kevin Danvers</option>
+                    </select>
+                </div>
+                
+                <div class="Food">
+                    <label for="">Please Select Meat of Choice</label>
+                    <br>
+                    <select name="meats" id="">
+                        <option value="1">Fried Chicken</option>
+                        <option value="2">Baked Chicken</option>
+                    </select>
+                </div>
+
+                <div class="Food">
+                    <label for="">Please Select Beverage of Choice</label>
+                    <br>
+                    <select name="bevs" id="">
+                        <option value=""></option>
+                        <option value="4">Pepsi</option>
+                    </select>
+                </div>
+
+                <div class="Food">
+                    <label for="">Please Select Side of Choice</label>
+                    <br>
+                    <select name="sides" id="">
+                        <option value=""></option>
+                        <option value="3">Side Dishes</option>
+                    </select>
+                </div>
+    
+                <div class="dates">
+                    <input type="date" name="dated" id="">
+                </div>
+                <div class="sub">
+                    <input type="submit" value="Place Order">
+                </div>
+            </form>
+        </div>
+        </div>
+    </div>
+
+   
+</body>
+</html>

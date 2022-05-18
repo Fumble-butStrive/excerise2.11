@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=h1, initial-scale=1.0">
+    <link rel="stylesheet" href="css/orderAdmin.css" />
+    <title>Document</title>
+</head>
+<body>
+    <%- include('./parials/navigation.ejs') %>
+    <h1>All Orders</h1>
+    <div class="table">
+    <table>
+        <thead>
+            <tr>
+                <th>Order Id </th>
+                <th>Trainee Name</th>
+                <th>Meal Options</th>
+                <th>Order Date</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+            <% if(data.length) {
+                for(var i = 0; i < data.length; i++) { 
+            %>
+            <tr>
+                <td class="centered"><%= data[i].id %></td>
+                <td class="centered"><%= data[i].fname %> <%= data[i].lname %></td>
+                <!-- <td class="centered"><%= data[i].lname %></td> -->
+                <td><%= data[i].option_name %></td>
+                <td><%= new Date(data[i].date).toLocaleDateString() %></td>
+                <td class="centered">
+                    <a class="light" href="/all_Order/edit/<%= data[i].id%>">Edit</a> <!--this refers to the index of the current data collection which is currently stored as data-->
+                    <a class="warn" href="/all_Order/delete/<%= data[i].id%>">Remove</a>
+                </td>
+                
+            </tr>
+               <% }
+          }else{ %>
+            <tr>
+                <td>No Trainees </td>
+            </tr>
+           <% } %>
+        </tbody>
+    </table>
+    </div>
+</body>
+</html>
